@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>left</title>
+</head>
+<body>
+<div th:fragment="left">
+<div class="left-nav">
+<div id="side-nav">
+    <ul id="nav">
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont left-nav-li layui-icon layui-icon-home"  lay-tips="我的桌面"></i>
+                <cite>我的桌面</cite>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont left-nav-li" lay-tips="会员管理">&#xe6b8;</i>
+                <cite>会员管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i></a>
+            <ul class="sub-menu">
+                <li>
+                    <a onclick="xadmin.add_tab('统计页面','/welcome1')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>统计页面</cite></a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont left-nav-li" lay-tips="工作">&#xe723;</i>
+                <cite>工作</cite>
+                <i class="iconfont nav_right">&#xe697;</i></a>
+            <ul class="sub-menu">
+                <li>
+                    <a onclick="xadmin.add_tab('申请银行卡','/addMessage')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>申请银行卡</cite></a>
+                </li>
+                <li>
+                    <a onclick="xadmin.add_tab('存款','/*')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>存款</cite></a>
+                </li>
+                <li>
+                    <a onclick="xadmin.add_tab('转账','/*')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>转账</cite></a>
+                </li>
+                <li>
+                    <a onclick="xadmin.add_tab('查询个人','/*')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>查询个人</cite></a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <i class="iconfont left-nav-li" lay-tips="员工管理">&#xe723;</i>
+                <cite>员工管理</cite>
+                <i class="iconfont nav_right">&#xe697;</i></a>
+            <ul class="sub-menu">
+                <li>
+                    <a onclick="xadmin.add_tab('员工列表','/employee')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>员工列表</cite></a>
+                </li>
+                <li>
+                    <a onclick="xadmin.add_tab('添加员工','/addEmployee')">
+                        <i class="iconfont">&#xe6a7;</i>
+                        <cite>添加员工</cite></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+</body>
+</html>

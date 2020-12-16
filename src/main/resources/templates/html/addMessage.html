@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>开户</title>
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/xadmin.css">
+    <link rel="stylesheet" href="/static/css/addMessage.css">
+    <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/js/xadmin.js"></script>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+</head>
+<body>
+    <div class="layui-container">
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+            <div class="formStart">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="name" required  lay-verify="required" placeholder="姓名" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">民族</label>
+                        <div class="layui-input-block">
+                            <select name="ethnic" lay-verify="" lay-search>
+                                <option value="010">汉族</option>
+                                <option value="021">回族</option>
+                                <option value="0571" selected>维吾尔族</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="site" required  lay-verify="required" placeholder="地址" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">选择地址</label>
+                        <div class="layui-input-inline">
+                            <select name="quiz1">
+                                <option value="">请选择省</option>
+                                <option value="浙江" selected="">浙江省</option>
+                                <option value="你的工号">江西省</option>
+                                <option value="你最喜欢的老师">福建省</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="quiz2">
+                                <option value="">请选择市</option>
+                                <option value="杭州">杭州</option>
+                                <option value="宁波" disabled="">宁波</option>
+                                <option value="温州">温州</option>
+                                <option value="温州">台州</option>
+                                <option value="温州">绍兴</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <select name="quiz3">
+                                <option value="">请选择县/区</option>
+                                <option value="西湖区">西湖区</option>
+                                <option value="余杭区">余杭区</option>
+                                <option value="拱墅区">临安市</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">电话号码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="phone" required  lay-verify="required" placeholder="电话号码" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">证件照片</label>
+                        <div class="layui-input-block">
+                            <div name="image1" class="image">
+                                <i class="layui-icon layui-icon-add-circle"></i>
+                                <span>正面</span>
+                            </div>
+                            <div name="image2" class="image">
+                                <i class="layui-icon layui-icon-add-circle"></i>
+                                背面
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">卡号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="crad" required  lay-verify="required" placeholder="卡号" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    layui.use(['form'], function(){
+        var form = layui.form
+        form.render();
+    })
+</script>
+</html>

@@ -1,0 +1,16 @@
+spring:
+  freemarker:
+    request-context-attribute: req
+    suffix: .ftl
+    content-type: text/html
+    cache: false
+    template-loader-path: classpath:/templates
+    charset: UTF-8
+    check-template-location: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+  mvc:
+    static-path-pattern: /static/**
+  thymeleaf:
+      prefix:
+        classpath: /templates/

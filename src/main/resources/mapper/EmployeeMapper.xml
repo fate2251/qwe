@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.EmployeeMapper">
+    <resultMap id="empMap" type="com.bean.Employee">
+        <id column="employee_id" property="emp_id"/>
+        <result column="employee_account" property="emp_account"/>
+        <result column="employee_pwd" property="emp_pwd"/>
+        <result column="employee_time" property="emp_time"/>
+        <result column="employee_status" property="emp_status"/>
+    </resultMap>
+    <select id="findEmpAll" resultMap="empMap">
+        select * from `employee`
+    </select>
+</mapper>

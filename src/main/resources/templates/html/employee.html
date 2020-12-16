@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工管理</title>
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/xadmin.css">
+    <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/js/xadmin.js"></script>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class='layui-row' style="width: 96%;height: auto;background-color: #fff;margin-top: 20px;margin-left: 20px;">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+</body>
+<script type="text/javascript" th:inline="none">
+    layui.use('table', function() {
+        var table = layui.table;
+        //第一个实例
+        table.render({
+            elem: '#demo'
+            , height: ''
+            , url: 'employee/findEmpAll'
+            , toolbar: true
+            , page: true //开启分页
+            , cols: [[ //表头
+                {field: 'emp_id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+                , {field: 'emp_account', title: '账号', width: 135, sort: true}
+                , {field: 'emp_pwd', title: '密码', width: 150}
+                , {field: 'emp_time', title: '创建时间', width: 250, templet:'<div>{{ layui.laytpl.toDateString(d.emp_time) }}</div>'}
+                , {field: 'emp_status', title: '状态', width: 150}
+            ]]
+        })
+
+        // 日期格式处理
+        layui.laytpl.toDateString = function (d, format) {
+            var date = new Date(d)
+                , ymd = [
+                this.digit(date.getFullYear(), 4)
+                , this.digit(date.getMonth() + 1)
+                , this.digit(date.getDate())
+            ]
+                , hms = [
+                this.digit(date.getHours())
+                , this.digit(date.getMinutes())
+                , this.digit(date.getSeconds())
+            ];
+
+            format = format || 'yyyy-MM-dd HH:mm:ss';
+
+            return format.replace(/yyyy/g, ymd[0])
+                .replace(/MM/g, ymd[1])
+                .replace(/dd/g, ymd[2])
+                .replace(/HH/g, hms[0])
+                .replace(/mm/g, hms[1])
+                .replace(/ss/g, hms[2]);
+        };
+        //数字前置补零
+        layui.laytpl.digit = function (num, length, end) {
+            var str = '';
+            num = String(num);
+            length = length || 2;
+            for (var i = num.length; i < length; i++) {
+                str += '0';
+            }
+            return num < Math.pow(10, length) ? str + (num | 0) : num;
+        };
+    })
+</script>
+</html>
